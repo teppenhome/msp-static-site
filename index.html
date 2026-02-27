@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap" rel="stylesheet">
+  <title>MSP - トップページ</title>
+</head>
+<body class="p-front">
+  <header class="l-header">
+    <div class="l-container l-header__inner">
+      <!-- ロゴ -->
+      <h1 class="l-header__logo">
+        <a href="#home">
+          <img src="/images/logo-gold.png" alt="MSP">
+        </a>
+      </h1>
+      <nav class="l-header__nav" aria-label="メインナビゲーション">
+        <ul class="l-header__nav-list">
+          <li class="l-header__nav-item">
+            <a href="#home" class="l-header__nav-link is-active">
+              <span class="l-header__nav-en">HOME</span>
+              <span class="l-header__nav-ja">ホーム</span>
+            </a>
+          </li>
+
+          <li class="l-header__nav-item">
+            <a href="#service" class="l-header__nav-link">
+              <span class="l-header__nav-en">CONSULTING</span>
+              <span class="l-header__nav-ja">コンサルティング</span>
+            </a>
+          </li>
+
+          <li class="l-header__nav-item">
+            <a href="#service" class="l-header__nav-link">
+              <span class="l-header__nav-en">REAL ESTATE</span>
+              <span class="l-header__nav-ja">不動産事業</span>
+            </a>
+          </li>
+
+          <li class="l-header__nav-item">
+            <a href="#company" class="l-header__nav-link">
+              <span class="l-header__nav-en">COMPANY</span>
+              <span class="l-header__nav-ja">会社概要</span>
+            </a>
+          </li>
+
+          <li class="l-header__nav-item">
+            <a href="#recruit" class="l-header__nav-link">
+              <span class="l-header__nav-en">RECRUIT</span>
+              <span class="l-header__nav-ja">リクルート</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- スマホ用ハンバーガーボタン（768px以下で表示） -->
+      <button
+        type="button"
+        class="c-hamburger"
+        aria-label="メニューを開く"
+        aria-expanded="false"
+        aria-controls="c-drawer__panel"
+        id="c-hamburger-trigger"
+      >
+        <span class="c-hamburger__line c-hamburger__line--top"></span>
+        <span class="c-hamburger__line c-hamburger__line--bot"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- スマホ用ドロワーメニュー（768px以下） -->
+  <div
+    class="c-drawer"
+    id="c-drawer"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-label="メニュー"
+  >
+    <div class="c-drawer__backdrop" id="c-drawer-backdrop" aria-hidden="true"></div>
+    <div class="c-drawer__panel" id="c-drawer__panel" tabindex="-1">
+      <button type="button" class="c-drawer__close" aria-label="メニューを閉じる" id="c-drawer-close">
+        <span class="c-drawer__close-line c-drawer__close-line--1"></span>
+        <span class="c-drawer__close-line c-drawer__close-line--2"></span>
+      </button>
+      <nav class="c-drawer__nav" aria-label="ドロワーメニュー">
+        <ul class="c-drawer__list">
+          <li class="c-drawer__item">
+            <a href="#home" class="c-drawer__link is-active">
+              <span class="c-drawer__en">HOME</span>
+              <span class="c-drawer__ja">ホーム</span>
+            </a>
+          </li>
+          <li class="c-drawer__item">
+            <a href="#service" class="c-drawer__link">
+              <span class="c-drawer__en">CONSULTING</span>
+              <span class="c-drawer__ja">コンサルティング</span>
+            </a>
+          </li>
+          <li class="c-drawer__item">
+            <a href="#service" class="c-drawer__link">
+              <span class="c-drawer__en">REAL ESTATE</span>
+              <span class="c-drawer__ja">不動産事業</span>
+            </a>
+          </li>
+          <li class="c-drawer__item">
+            <a href="#company" class="c-drawer__link">
+              <span class="c-drawer__en">COMPANY</span>
+              <span class="c-drawer__ja">会社概要</span>
+            </a>
+          </li>
+          <li class="c-drawer__item">
+            <a href="#recruit" class="c-drawer__link">
+              <span class="c-drawer__en">RECRUIT</span>
+              <span class="c-drawer__ja">リクルート</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <main class="p-front__main">
+    <section id="home" class="p-front__hero c-section">
+      <div class="p-front__hero-bg">
+        <div class="p-front__hero-slide p-front__hero-slide--01"></div>
+        <div class="p-front__hero-slide p-front__hero-slide--02"></div>
+        <div class="p-front__hero-slide p-front__hero-slide--03"></div>
+      </div>
+      <div class="l-container p-front__hero-inner is-preload">
+        <p class="p-front__hero-copy-en p-front__hero-copy-en--line1"><span class="is-cap">C</span>ONNECTING <span class="is-cap">P</span>EOPLE.</p>
+        <p class="p-front__hero-copy-en p-front__hero-copy-en--line2"><span class="is-cap">C</span>ONNECTING TO THE <span class="is-cap">F</span>UTURE.</p>
+        <p class="p-front__hero-copy-ja">人をつなぐ　未来へつなぐ</p>
+      </div>
+    </section>
+
+    <section id="about" class="p-front__about c-section has-divider">
+      <div class="l-container">
+        <h2 class="p-front__section-title js-fade">ABOUT US</h2>
+        <div class="p-front__about-body js-fade">
+          <div class="p-front__about-media">
+            <div class="p-front__about-img-wrap">
+              <img src="/images/top-about.webp" alt="" class="p-front__about-img" width="600" height="400" />
+            </div>
+          </div>
+          <div class="p-front__about-content">
+            <div class="p-front__card p-front__card--beige">
+              <p class="p-front__card-text">企業の成長と資産価値向上を支える、トータルビジネスコンサルティングパートナーです。<br />経営戦略から業務改善、営業支援、記帳代行など、企業が抱える多様な課題に対して、実行力のある提案と伴走支援を提供しています。<br />私たちは単なる解決だけでなく、未来の可能性を拓く支援を目指しています。</p>
+              <a class="c-btn" href="#">VIEW MORE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service" class="p-front__service c-section has-divider">
+      <div class="l-container">
+        <h2 class="p-front__section-title js-fade">SERVICE</h2>
+
+        <article class="p-front__service-block js-fade">
+          <div class="p-front__service-media">
+            <div class="p-front__service-photo">
+              <div class="p-front__service-img-wrap">
+                <img src="/images/top-service01.webp" alt="Consulting" class="p-front__service-img" width="600" height="400" />
+              </div>
+            </div>
+
+            <div class="p-front__service-card p-front__service-card--navy">
+              <h3 class="p-front__service-card-title">Consulting</h3>
+              <span class="p-front__service-card-title-ja">コンサルティング事業</span>
+              <p class="p-front__service-card-desc">事業・経営に関する様々な課題解決を<br />トータルサポートいたします。</p>
+              <a class="c-btn --beige" href="#">VIEW MORE</a>
+            </div>
+
+            <div class="p-front__service-list-wrap">
+              <ul class="p-front__service-list">
+                <li>各業務経営戦略 / 事業戦略</li>
+                <li>業務改善 / 組織改革</li>
+                <li>営業支援</li>
+                <li>ソーシャルサポート</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-front__service-block js-fade">
+          <div class="p-front__service-media">
+            <div class="p-front__service-photo">
+              <div class="p-front__service-img-wrap">
+                <img src="/images/top-service02.webp" alt="Consulting" class="p-front__service-img" width="600" height="400" />
+              </div>
+            </div>
+
+            <div class="p-front__service-card p-front__service-card--navy">
+              <h3 class="p-front__service-card-title">Real Estate</h3>
+              <span class="p-front__service-card-title-ja">不動産事業</span>
+              <p class="p-front__service-card-desc">不動産売買・賃貸仲介・資産運用に関するお悩み、お気軽にご相談ください。</p>
+              <a class="c-btn --beige" href="#">VIEW MORE</a>
+            </div>
+
+            <div class="p-front__service-list-wrap">
+              <ul class="p-front__service-list">
+                <li>不動産売買</li>
+                <li>不動産賃貸</li>
+                <li>不動産投資 / 資産活用</li>
+                <li>運用 / 出口戦略支援</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="p-front__service-bgword-wrap" aria-hidden="true" role="presentation">
+        <div class="p-front__service-bgword-track">
+          <span class="p-front__service-bgword">
+            Connecting People. Connecting To The Future.
+          </span>
+          <span class="p-front__service-bgword">
+            Connecting People. Connecting To The Future.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <div class="c-section-divider js-fade" aria-hidden="true">
+      <img class="c-section-divider__img" src="/images/building01_2.png" alt="" loading="lazy" decoding="async">
+    </div>
+
+    <section id="recruit" class="p-front__recruit c-section has-divider">
+      <div class="p-front__recruit-inner">
+        <div class="l-container">
+          <h2 class="p-front__section-title js-fade">RECRUIT</h2>
+          <div class="p-front__recruit-body">
+            <div class="p-front__recruit-content js-fade">
+              <div class="p-front__card p-front__card--beige">
+                <p class="p-front__card-text">専門性と誠実さを大切にし、企業の未来を共に支える仲間を募集しています。<br /><br />経営や不動産分野を中心に、課題の本質と向き合いながら実行力のある支援を行う環境です。<br /><br />一人ひとりの強みを活かし、成長し続けたい方を歓迎します。</p>
+                <a class="c-btn" href="#">VIEW MORE</a>
+              </div>
+            </div>
+            <div class="p-front__recruit-media js-fade">
+              <div class="p-front__recruit-img-wrap">
+                <img src="/images/top-recruit.webp" alt="" class="p-front__recruit-img" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-front__gallery c-section">
+      <div class="p-front__gallery-inner">
+        <div class="p-front__gallery-item">
+          <div class="p-front__gallery-img-wrap">
+            <img src="/images/under-images01.webp" alt="" class="p-front__gallery-img" />
+          </div>
+        </div>
+        <div class="p-front__gallery-item">
+          <div class="p-front__gallery-img-wrap">
+            <img src="/images/under-images02.webp" alt="" class="p-front__gallery-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner l-container">
+      <nav class="site-footer__nav" aria-label="フッターナビ">
+        <ul class="site-footer__nav-list">
+          <li><a href="/">トップ</a></li>
+          <li><a href="/about/">ABOUT US</a></li>
+          <li><a href="/service/">サービス</a></li>
+          <li><a href="/recruit/">リクルート</a></li>
+          <li><a href="/company/">会社概要</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__divider" aria-hidden="true"></div>
+
+      <div class="site-footer__info">
+        <div class="site-footer__brand">
+          <img class="site-footer__logo" src="/images/logo-gold.png" alt="MSP" width="44" height="44" />
+          <div class="site-footer__brand-text">
+            <p class="site-footer__name">株式会社エムエスピー</p>
+          </div>
+        </div>
+
+        <div class="site-footer__addr">
+          <p>【東京本社】</p>
+          <p>〒150-0013</p>
+          <p>渋谷区恵比寿4-7 SHIBATA BLD 7階</p>
+          <p>TEL：03-6407-9365</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__copy">© MSP Co., Ltd. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

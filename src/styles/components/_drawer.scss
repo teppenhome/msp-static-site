@@ -1,0 +1,299 @@
+// ========================================
+// Component: Drawer & Hamburger（スマホ用ドロワーメニュー）
+// 768px以下で表示 / ネイビー×ゴールド / 右からスライドイン
+// ========================================
+@use "../variables" as *;
+
+$drawer-ease: cubic-bezier(0.16, 1, 0.3, 1);
+$drawer-duration: 0.5s;
+$drawer-gold-line: rgba($color-gold, 0.35);
+
+// ----------------------------------------
+// ハンバーガーボタン（SPのみ表示は _layout.scss で制御）
+// ----------------------------------------
+.c-hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 52px;   // ← 少し広げる
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: $color-beige;
+  transition: color $drawer-duration $drawer-ease;
+
+  &:hover,
+  &:focus-visible {
+    color: rgba($color-gold, 0.85);
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba($color-gold, 0.5);
+    outline-offset: 4px;
+  }
+
+  &__line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;      // ← 22px → 30px に延長
+    height: 1.2px;
+    background: currentColor;
+    transition:
+      transform $drawer-duration $drawer-ease,
+      opacity $drawer-duration $drawer-ease;
+  }
+
+  &__line--top {
+    top: 18px;
+  }
+
+  &__line--bot {
+    bottom: 18px;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  // 開いたとき（2本で×にする）
+  &.is-open {
+    .c-hamburger__line--top {
+      transform: translateX(-50%) translateY(6px) rotate(45deg);
+    }
+
+    .c-hamburger__line--bot {
+      transform: translateX(-50%) translateY(-6px) rotate(-45deg);
+    }
+  }
+}
+
+// ----------------------------------------
+// ドロワー（フルスクリーン・右スライド）
+// ----------------------------------------
+.c-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  visibility: hidden;
+
+  &.is-open {
+    pointer-events: auto;
+    visibility: visible;
+
+    .c-drawer__backdrop {
+      opacity: 1;
+    }
+
+    .c-drawer__panel {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    /* ✅ 開いたとき：区切り線を表示（文字より先でも後でもOK） */
+    .c-drawer__item {
+      border-color: $drawer-gold-line;
+    }
+
+    /* ✅ 開いたとき：リンクを表示 */
+    .c-drawer__link {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ✅ 上から順番に（5個分）※必要なら増やしてOK */
+    .c-drawer__item:nth-child(1) .c-drawer__link { transition-delay: 0.25s; }
+    .c-drawer__item:nth-child(2) .c-drawer__link { transition-delay: 0.33s; }
+    .c-drawer__item:nth-child(3) .c-drawer__link { transition-delay: 0.41s; }
+    .c-drawer__item:nth-child(4) .c-drawer__link { transition-delay: 0.49s; }
+    .c-drawer__item:nth-child(5) .c-drawer__link { transition-delay: 0.57s; }
+  }
+
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba($color-navy, 0.8);
+    opacity: 0;
+    transition: opacity $drawer-duration $drawer-ease;
+    cursor: pointer;
+  }
+
+  &__panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 32px 48px;
+    background: rgba($color-navy, 0.5);
+    transform: translateX(100%);
+    opacity: 0;
+    transition:
+      transform $drawer-duration $drawer-ease,
+      opacity $drawer-duration $drawer-ease;
+    overflow-y: auto;
+  }
+
+  // 閉じるボタン（パネル内・右上固定）
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid $drawer-gold-line;
+    border-radius: 50%;
+    background: transparent;
+    color: $color-gold;
+    cursor: pointer;
+    transition:
+      border-color $drawer-duration $drawer-ease,
+      color $drawer-duration $drawer-ease,
+      transform $drawer-duration $drawer-ease;
+
+    &:hover,
+    &:focus-visible {
+      border-color: rgba($color-gold, 0.6);
+      color: rgba($color-gold, 0.9);
+      transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba($color-gold, 0.4);
+      outline-offset: 2px;
+    }
+  }
+
+  &__close-line {
+    position: absolute;
+    width: 14px;
+    height: 1px;
+    background: currentColor;
+    transition: transform $drawer-duration $drawer-ease;
+
+    &--1 { transform: rotate(45deg); }
+    &--2 { transform: rotate(-45deg); }
+  }
+
+  &__nav {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.35s ease;
+
+    &:first-child {
+      border-top: 1px solid transparent;
+    }
+  }
+
+  /* 文字（リンク）は最初は完全に消す → 開いたら順番に出す */
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    min-height: 72px;
+    color: $color-gold;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    transition:
+      color $drawer-duration $drawer-ease,
+      opacity 0.55s cubic-bezier(.16, 1, .3, 1),
+      transform 0.55s cubic-bezier(.16, 1, .3, 1);
+
+    /* 初期（閉じてる時） */
+    opacity: 0;
+    transform: translateY(14px);
+
+    &:hover,
+    &:focus-visible {
+      color: rgba($color-gold, 0.9);
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba($color-gold, 0.4);
+      outline-offset: 4px;
+    }
+
+    &.is-active {
+      color: rgba($color-beige, 0.95);
+    }
+  }
+
+  &__en {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  }
+
+  &__ja {
+    margin-top: 6px;
+    font-size: 12px;
+    opacity: 0.8;
+    line-height: 1.2;
+  }
+
+  /* 閉じるとき：遅延が残ると次回の開きでズレるので必ずリセット */
+  &:not(.is-open) {
+    .c-drawer__link {
+      transition-delay: 0s;
+    }
+    .c-drawer__item {
+      border-color: transparent;
+    }
+  }
+}
+
+/* アニメーション軽減 */
+@media (prefers-reduced-motion: reduce) {
+  .c-hamburger__line,
+  .c-drawer__backdrop,
+  .c-drawer__panel,
+  .c-drawer__close,
+  .c-drawer__close-line {
+    transition-duration: 0.15s;
+  }
+
+  .c-drawer__close:hover,
+  .c-drawer__close:focus-visible {
+    transform: none;
+  }
+
+  /* メニューの順番表示も軽減 */
+  .c-drawer__link {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .c-drawer__item {
+    border-color: $drawer-gold-line !important;
+    transition: none !important;
+  }
+}

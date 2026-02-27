@@ -1,0 +1,47 @@
+// ========================================
+// Component: Button（.c-btn など）
+// ========================================
+@use "../variables" as *;
+
+.c-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  width: fit-content;
+  align-self: center;
+
+  background: transparent; 
+  color: #1c1c3a;
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+
+  border: 1px solid #1c1c3a;
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+
+  &.--beige {
+    color: $color-beige;
+    border: 1px solid $color-beige;
+
+    &:hover {
+      background: $color-beige;
+      color: $color-navy-dark;
+    }
+  }
+
+  &:hover {
+    background: #1c1c3a;          // ホバーで塗る
+    color: #ffffff;
+  }
+}
+
+@media (max-width: $breakpoint-sp) {
+  .c-btn {
+    display: block;
+    margin: 30px auto 20px;
+  }
+}

@@ -1,0 +1,28 @@
+// ========================================
+// Base（reset, body, html, img など基本）
+// ========================================
+@use "variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+}
+
+body {
+  font-family: $font-base;
+  line-height: 1.7;
+  color: $color-text;
+  background: $color-white;
+  overflow-x: hidden;
+  background-color: #2f5f8f;
+}

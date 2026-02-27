@@ -1,0 +1,34 @@
+// ========================================
+// Variables（色 / フォント / 余白 / ブレイクポイント / z-index）
+// ========================================
+
+// Color
+$color-navy: #020063;
+$color-navy-dark: #050455;
+$color-gold: #B9AA82;
+$color-beige: #f5deb3;
+$color-beige-light: #faf4eb;
+$color-white: #fff;
+$color-text: #333;
+$color-text-light: rgba(255, 255, 255, 0.9);
+
+// Layout / Spacing
+$container-max: 1200px;
+$container-padding: 24px;
+$section-padding-y: 100px;
+$section-padding-y-sm: 48px;
+
+// Font
+$font-base: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+
+// Breakpoint（1024: タブレット / 768: SP / 480: 小型SP）
+$breakpoint-lg: 1100px;
+$breakpoint-sp: 768px;
+$breakpoint-sm: 480px;
+
+// Z-index
+$z-header: 100;
+$z-above: 3;
+$z-overlay: 2;
+$z-base: 1;
+$z-bg: 0;
