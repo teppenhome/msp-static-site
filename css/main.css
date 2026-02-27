@@ -724,6 +724,18 @@ body {
     transform: none;
   }
 }
+.p-front {
+  /* デフォルトは停止 */
+}
+.p-front__hero-bg .p-front__hero-slide {
+  animation-play-state: paused;
+}
+.p-front {
+  /* ローディング後にこのクラスが付いたら開始 */
+}
+.p-front__hero-bg.is-play .p-front__hero-slide {
+  animation-play-state: running;
+}
 .p-front__hero-inner {
   position: relative;
   z-index: 5;

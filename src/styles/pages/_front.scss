@@ -135,6 +135,16 @@
     }
   }
 
+  /* デフォルトは停止 */
+  &__hero-bg .p-front__hero-slide {
+    animation-play-state: paused;
+  }
+
+  /* ローディング後にこのクラスが付いたら開始 */
+  &__hero-bg.is-play .p-front__hero-slide {
+    animation-play-state: running;
+  }
+
   &__hero-inner {
     position: relative;
     z-index: 5;

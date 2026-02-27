@@ -175,17 +175,25 @@ window.addEventListener("load", () => {
 
   /* ✅ ローディングを消す（追加） */
   const loader = document.querySelector(".c-loading");
-  if (loader) {
-    // 1回は描画させてから消す（チラつき防止）
-    setTimeout(() => {
-      loader.style.transition = "opacity 0.6s ease";
-      loader.style.opacity = "0";
 
-      setTimeout(() => {
-        loader.remove();
-        ScrollTrigger.refresh(); // ローダー削除後にrefresh
-      }, 600);
-    }, 300); // 最低表示時間（好みで）
+  if (loader) {
+    // すぐフェード開始
+    loader.style.transition = "opacity 0.6s ease";
+    loader.style.opacity = "0";
+
+    setTimeout(() => {
+      loader.remove();
+
+      // ✅ ヒーロースライドをリセットして再スタート
+      const heroBg = document.querySelector(".p-front__hero-bg");
+      if (heroBg) {
+        heroBg.classList.remove("is-play");
+        void heroBg.offsetWidth;
+        heroBg.classList.add("is-play");
+      }
+
+      ScrollTrigger.refresh();
+    }, 600); // フェード時間と合わせる
   } else {
     ScrollTrigger.refresh();
   }
