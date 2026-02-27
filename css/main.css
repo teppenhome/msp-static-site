@@ -600,6 +600,35 @@ body {
     transition: none !important;
   }
 }
+.c-loading {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background: #020063;
+}
+
+.c-loading__text {
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
 .p-front__hero {
   position: relative;
   min-height: 110vh;
