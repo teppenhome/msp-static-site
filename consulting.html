@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <title>MSP - Consulting</title>
+  </head>
+  <body class="p-consulting">
+    <div class="c-loading">
+      <p class="c-loading__text">Loading...</p>
+    </div>
+
+    <header class="l-header">
+      <div class="l-container l-header__inner">
+        <!-- ロゴ -->
+        <h1 class="l-header__logo">
+          <a href="/">
+            <img src="/images/logo-gold.png" alt="MSP" />
+          </a>
+        </h1>
+
+        <nav class="l-header__nav" aria-label="メインナビゲーション">
+          <ul class="l-header__nav-list">
+            <li class="l-header__nav-item">
+              <a href="/" class="l-header__nav-link">
+                <span class="l-header__nav-en">HOME</span>
+                <span class="l-header__nav-ja">ホーム</span>
+              </a>
+            </li>
+
+            <li class="l-header__nav-item">
+              <a href="/consulting.html" class="l-header__nav-link is-active">
+                <span class="l-header__nav-en">CONSULTING</span>
+                <span class="l-header__nav-ja">コンサルティング</span>
+              </a>
+            </li>
+
+            <li class="l-header__nav-item">
+              <a href="#service" class="l-header__nav-link">
+                <span class="l-header__nav-en">REAL ESTATE</span>
+                <span class="l-header__nav-ja">不動産事業</span>
+              </a>
+            </li>
+
+            <li class="l-header__nav-item">
+              <a href="#company" class="l-header__nav-link">
+                <span class="l-header__nav-en">COMPANY</span>
+                <span class="l-header__nav-ja">会社概要</span>
+              </a>
+            </li>
+
+            <li class="l-header__nav-item">
+              <a href="#recruit" class="l-header__nav-link">
+                <span class="l-header__nav-en">RECRUIT</span>
+                <span class="l-header__nav-ja">リクルート</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- スマホ用ハンバーガーボタン -->
+        <button
+          type="button"
+          class="c-hamburger"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="c-drawer__panel"
+          id="c-hamburger-trigger"
+        >
+          <span class="c-hamburger__line c-hamburger__line--top"></span>
+          <span class="c-hamburger__line c-hamburger__line--bot"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- スマホ用ドロワーメニュー -->
+    <div
+      class="c-drawer"
+      id="c-drawer"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="メニュー"
+    >
+      <div
+        class="c-drawer__backdrop"
+        id="c-drawer-backdrop"
+        aria-hidden="true"
+      ></div>
+      <div class="c-drawer__panel" id="c-drawer__panel" tabindex="-1">
+        <button
+          type="button"
+          class="c-drawer__close"
+          aria-label="メニューを閉じる"
+          id="c-drawer-close"
+        >
+          <span class="c-drawer__close-line c-drawer__close-line--1"></span>
+          <span class="c-drawer__close-line c-drawer__close-line--2"></span>
+        </button>
+        <nav class="c-drawer__nav" aria-label="ドロワーメニュー">
+          <ul class="c-drawer__list">
+            <li class="c-drawer__item">
+              <a href="/" class="c-drawer__link">
+                <span class="c-drawer__en">HOME</span>
+                <span class="c-drawer__ja">ホーム</span>
+              </a>
+            </li>
+            <li class="c-drawer__item">
+              <a href="/consulting.html" class="c-drawer__link is-active">
+                <span class="c-drawer__en">CONSULTING</span>
+                <span class="c-drawer__ja">コンサルティング</span>
+              </a>
+            </li>
+            <li class="c-drawer__item">
+              <a href="/#service" class="c-drawer__link">
+                <span class="c-drawer__en">REAL ESTATE</span>
+                <span class="c-drawer__ja">不動産事業</span>
+              </a>
+            </li>
+            <li class="c-drawer__item">
+              <a href="/#company" class="c-drawer__link">
+                <span class="c-drawer__en">COMPANY</span>
+                <span class="c-drawer__ja">会社概要</span>
+              </a>
+            </li>
+            <li class="c-drawer__item">
+              <a href="/#recruit" class="c-drawer__link">
+                <span class="c-drawer__en">RECRUIT</span>
+                <span class="c-drawer__ja">リクルート</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main class="p-consulting__main">
+      <!-- Hero -->
+      <section class="p-consulting__hero">
+        <div class="p-consulting__hero-bg">
+          <div class="p-consulting__hero-img"></div>
+          <div class="p-consulting__hero-overlay"></div>
+        </div>
+
+        <div class="l-container p-consulting__hero-inner js-hero-reveal">
+          <div class="p-consulting__hero-box">
+            <p class="p-consulting__hero-en">CONSULTING</p>
+            <p class="p-consulting__hero-ja">コンサルティング事業</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Intro -->
+      <section class="p-consulting__intro">
+        <div class="p-consulting__intro-inner js-hero-reveal">
+          <p class="p-consulting__intro-text">
+            事業・経営に関する様々な課題解決を<br />
+            トータルサポートいたします。
+          </p>
+        </div>
+      </section>
+      <!-- 3. サービスセクション -->
+      <section class="p-consulting__services">
+        <div class="p-consulting__services-inner">
+          <!-- #01 -->
+          <article
+            class="p-consulting__serviceCard p-consulting__serviceCard--01"
+          >
+            <div class="p-consulting__serviceCard-inner l-container js-fade">
+              <div class="p-consulting__serviceCard-media">
+                <div class="p-consulting__serviceCard-imageWrap">
+                  <img
+                    src="/images/consulting/consulting-image02.webp"
+                    alt="各業務経営戦略・事業戦略のイメージ"
+                    class="p-consulting__serviceCard-image"
+                  />
+                  <span class="p-consulting__serviceCard-number">#01</span>
+                </div>
+              </div>
+
+              <div class="p-consulting__serviceCard-content">
+                <h2 class="p-consulting__serviceCard-title">
+                  各業務経営戦略・事業戦略
+                </h2>
+
+                <ul class="p-consulting__serviceCard-list">
+                  <li>経営・事業戦略の再構築</li>
+                  <li>新事業のプロジェクト推進</li>
+                  <li>各種課題対応等</li>
+                </ul>
+
+                <div class="p-consulting__serviceCard-box">
+                  <p class="p-consulting__serviceCard-boxTitle">
+                    例えばこんなお悩みを改善します
+                  </p>
+
+                  <ul class="p-consulting__serviceCard-boxList">
+                    <li>中期計画と実施が乖離している</li>
+                    <li>組織間コミュニケーションに溝がある</li>
+                    <li>明確な組織方針が見えない</li>
+                    <li>社員が収益向上に関心がない</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- #02 -->
+          <article
+            class="p-consulting__serviceCard p-consulting__serviceCard--02"
+          >
+            <div class="p-consulting__serviceCard-inner l-container js-fade">
+              <div class="p-consulting__serviceCard-media">
+                <div class="p-consulting__serviceCard-imageWrap">
+                  <img
+                    src="/images/consulting/consulting-image03.webp"
+                    alt="業務改善・組織改革のイメージ"
+                    class="p-consulting__serviceCard-image"
+                  />
+                  <span class="p-consulting__serviceCard-number">#02</span>
+                </div>
+              </div>
+
+              <div class="p-consulting__serviceCard-content">
+                <h2 class="p-consulting__serviceCard-title">
+                  業務改善・組織改革
+                </h2>
+
+                <ul class="p-consulting__serviceCard-list">
+                  <li>業務の効率化</li>
+                  <li>生産性の向上</li>
+                  <li>人・業務・組織の活性化策</li>
+                </ul>
+
+                <div class="p-consulting__serviceCard-box">
+                  <p class="p-consulting__serviceCard-boxTitle">
+                    例えばこんなお悩みを改善します
+                  </p>
+
+                  <ul class="p-consulting__serviceCard-boxList">
+                    <li>企業利益の後退</li>
+                    <li>リソース不足改善</li>
+                    <li>イノベーション創出</li>
+                    <li>離職防止、定着率向上</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- #03 -->
+          <article
+            class="p-consulting__serviceCard p-consulting__serviceCard--03"
+          >
+            <div class="p-consulting__serviceCard-inner l-container js-fade">
+              <div class="p-consulting__serviceCard-media">
+                <div class="p-consulting__serviceCard-imageWrap">
+                  <img
+                    src="/images/consulting/consulting-image01.webp"
+                    alt="営業支援のイメージ"
+                    class="p-consulting__serviceCard-image"
+                  />
+                  <span class="p-consulting__serviceCard-number">#03</span>
+                </div>
+              </div>
+
+              <div class="p-consulting__serviceCard-content">
+                <h2 class="p-consulting__serviceCard-title">営業支援</h2>
+
+                <ul class="p-consulting__serviceCard-list">
+                  <li>店舗スタッフの接客力の強化</li>
+                  <li>収益貢献につながる施策づくり 等</li>
+                </ul>
+
+                <div class="p-consulting__serviceCard-box">
+                  <p class="p-consulting__serviceCard-boxTitle">
+                    例えばこのような能力を強化します
+                  </p>
+
+                  <ul class="p-consulting__serviceCard-boxList">
+                    <li>アプローチ、見込み客発掘</li>
+                    <li>商談準備の方法</li>
+                    <li>プレゼンテーション、提案力</li>
+                    <li>クロージング、交渉</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 4. ソーシャルサポート概要 -->
+      <section class="p-consulting__social">
+        <div class="p-consulting__social-bg" aria-hidden="true"></div>
+
+        <div class="p-consulting__social-panel l-container js-fade">
+          <div class="p-consulting__social-box">
+            <h2 class="p-consulting__social-title">ソーシャルサポートの概要</h2>
+
+            <div class="p-consulting__social-body">
+              <p>
+                いつの時代も「思い」を持った人々のたった一つのひらめきが大きなモノへと変化し、
+                世の中の仕組みや個人の人生をも変わって行くと考えます。<br />
+                これらの先に広がる「未来の可能性」は無限大です。<br />
+                アイデアがあっても技術がないから……<br />
+                夢があっても力がないから……<br />
+                資金がないから……<br />
+                人脈がないから……<br />
+                違う仕事をしているから……<br />
+                フリーターだから……<br />
+                それらの理由で閉ざされてしまっている可能性の道を切り拓き、
+                「チャレンジ」するお手伝いをさせていただきたいと思います<br />
+                「夢を実現させる」<br />
+                斡旋から、融資、プランニング、プロジェクトとさまざまな可能性をこの出会いで創造し、
+                「思い」を、そして「夢」を現実のモノにして下さい。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner l-container">
+        <nav class="site-footer__nav" aria-label="フッターナビ">
+          <ul class="site-footer__nav-list">
+            <li><a href="/">トップ</a></li>
+            <li><a href="/about/">ABOUT US</a></li>
+            <li><a href="/service/">サービス</a></li>
+            <li><a href="/recruit/">リクルート</a></li>
+            <li><a href="/company/">会社概要</a></li>
+          </ul>
+        </nav>
+
+        <div class="site-footer__divider" aria-hidden="true"></div>
+
+        <div class="site-footer__info">
+          <div class="site-footer__brand">
+            <img
+              class="site-footer__logo"
+              src="/images/logo-gold.png"
+              alt="MSP"
+              width="44"
+              height="44"
+            />
+            <div class="site-footer__brand-text">
+              <p class="site-footer__name">株式会社エムエスピー</p>
+            </div>
+          </div>
+
+          <div class="site-footer__addr">
+            <p>【東京本社】</p>
+            <p>〒150-0013</p>
+            <p>渋谷区恵比寿4-7 SHIBATA BLD 7階</p>
+            <p>TEL：03-6407-9365</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__copy">© MSP Co., Ltd. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

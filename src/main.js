@@ -117,74 +117,68 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===============================
      ギャラリー ScrollTrigger
   =============================== */
- gsap.utils.toArray(".p-front__gallery-img").forEach((img) => {
-   const wrap = img.closest(".p-front__gallery-img-wrap");
-   if (!wrap) return;
+  gsap.utils.toArray(".p-front__gallery-img").forEach((img) => {
+    const wrap = img.closest(".p-front__gallery-img-wrap");
+    if (!wrap) return;
 
-   const getY = () => {
-     const ih = img.getBoundingClientRect().height;
-     const wh = wrap.getBoundingClientRect().height;
-     return -Math.max(0, ih - wh);
-   };
+    const getY = () => {
+      const ih = img.getBoundingClientRect().height;
+      const wh = wrap.getBoundingClientRect().height;
+      return -Math.max(0, ih - wh);
+    };
 
-   const setup = () => {
-     gsap.killTweensOf(img);
-     gsap.set(img, { y: 0 });
+    const setup = () => {
+      gsap.killTweensOf(img);
+      gsap.set(img, { y: 0 });
 
-     gsap.to(img, {
-       y: getY, // ← 関数で渡す（refresh時に再計算される）
-       ease: "none",
-       scrollTrigger: {
-         trigger: wrap,
-         start: "top bottom",
-         end: "bottom top",
-         scrub: true,
-         invalidateOnRefresh: true,
-       },
-     });
-   };
+      gsap.to(img, {
+        y: getY, // ← 関数で渡す（refresh時に再計算される）
+        ease: "none",
+        scrollTrigger: {
+          trigger: wrap,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
+      });
+    };
 
-   if (img.complete) {
-     setup();
-   } else {
-     img.addEventListener("load", () => {
-       setup();
-       ScrollTrigger.refresh();
-     });
-   }
+    if (img.complete) {
+      setup();
+    } else {
+      img.addEventListener("load", () => {
+        setup();
+        ScrollTrigger.refresh();
+      });
+    }
 
-   ScrollTrigger.addEventListener("refreshInit", setup);
- });
+    ScrollTrigger.addEventListener("refreshInit", setup);
+  });
 });
 
 /* ===============================
    window load（表示後に実行したい処理）
 =============================== */
 window.addEventListener("load", () => {
-    /* ヒーローテキスト フェードイン */
-  const hero = document.querySelector(".p-front__hero-inner");
+  /* ヒーローテキスト フェードイン */
+  const heroes = document.querySelectorAll(".js-hero-reveal");
 
-  if (hero) {
-    hero.classList.add("is-animate");
+  heroes.forEach((hero) => {
+    hero.classList.add("is-visible");
+  });
 
-    setTimeout(() => {
-      hero.classList.remove("is-animate");
-      hero.classList.add("is-visible");
-    }, 100);
-  }
-
-  /* ✅ ローディングを消す（追加） */
+  /* ローディングを消す */
   const loader = document.querySelector(".c-loading");
 
   if (loader) {
-    // すぐフェード開始
     loader.style.transition = "opacity 0.6s ease";
     loader.style.opacity = "0";
 
     setTimeout(() => {
       loader.remove();
 
-      // ✅ ヒーロースライドをリセットして再スタート
+      // トップページの背景スライドをリセットして再スタート
       const heroBg = document.querySelector(".p-front__hero-bg");
       if (heroBg) {
         heroBg.classList.remove("is-play");
@@ -193,7 +187,7 @@ window.addEventListener("load", () => {
       }
 
       ScrollTrigger.refresh();
-    }, 600); // フェード時間と合わせる
+    }, 600);
   } else {
     ScrollTrigger.refresh();
   }

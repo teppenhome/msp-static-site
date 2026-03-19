@@ -1,0 +1,21 @@
+.js-hero-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.js-hero-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1.6s ease, transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js-fade {
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.js-fade.is-inview {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}/*# sourceMappingURL=animations.css.map */

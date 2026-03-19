@@ -1,0 +1,509 @@
+// ========================================
+// Page: Consulting（.p-consulting 配下）
+// ========================================
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.p-consulting {
+  &__main {
+    overflow: hidden;
+    background: #e3d6ab;
+  }
+
+  // -------------------------
+  // Hero
+  // -------------------------
+  &__hero {
+    position: relative;
+    min-height: 500px;
+    background: #081a78;
+
+    @media (max-width: 768px) {
+      min-height: 240px;
+    }
+  }
+
+  &__hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  &__hero-img {
+    position: absolute;
+    inset: 0;
+    background-image: url("/images/consulting/page-consulting_top.webp");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    transform: scale(1);
+  }
+
+  &__hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: #0500d2;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  &__hero-inner {
+    position: relative;
+    z-index: 2;
+    min-height: 460px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    @media (max-width: 768px) {
+      min-height: 240px;
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  }
+
+  &__hero-box {
+    display: inline-block;
+    min-width: 340px;
+    padding: 22px 34px 20px;
+    background: linear-gradient(
+      160deg,
+      rgba(4, 0, 201, 0.35) 0%,
+      // 上：明るく・透ける
+      rgba(2, 0, 99, 0.8) 100% // 下：濃く・重い
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 768px) {
+      min-width: auto;
+      width: min(100%, 320px);
+      padding: 18px 20px 16px;
+    }
+  }
+
+  &__hero-en {
+    margin: 0;
+    font-family: "Times New Roman", "Yu Mincho", serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.06em;
+    color: #fff;
+  }
+
+  &__hero-ja {
+    margin: 10px 0 0;
+    font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+    color: #fff;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+  }
+
+  // -------------------------
+  // Intro
+  // -------------------------
+  &__intro {
+    position: relative;
+    background: #061a86;
+    padding: 60px 16px 0;
+    text-align: center;
+    z-index: 10;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -80px;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+
+      border-left: 50vw solid transparent;
+      border-right: 50vw solid transparent;
+      border-top: 80px solid #061a86;
+
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      padding: 30px 16px 10px;
+      
+      &::after {
+        bottom: -40px; /* 少し浅く */
+        border-top: 40px solid #061a86; /* 高さを半分 */
+      }
+    }
+  }
+
+  &__intro-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  &__intro-text {
+    margin: 0;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(1.1rem, 2.2vw, 1.75rem);
+    line-height: 1.9;
+    letter-spacing: 0.08em;
+    color: #f6e9b8;
+    text-shadow: 0 0 10px rgba(255, 235, 170, 0.18);
+
+    @media (max-width: 768px) {
+      line-height: 1.8;
+    }
+  }
+
+  // -------------------------
+  // Services
+  // -------------------------
+  &__services {
+    position: relative;
+    background: #ebdaab;
+    padding: 120px 0;
+
+    @media (max-width: 768px) {
+      padding: 40px 0 72px;
+    }
+  }
+
+  &__services-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__serviceCard {
+    position: relative;
+    padding: 80px 0;
+    background: #ebdaab;
+
+    @media (max-width: 900px) {
+      padding: 80px 0 80px;
+    }
+
+    /* ▼ 三角（全カードに付ける） */
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -60px;
+      width: 100%;
+      height: 62px;
+
+      background: inherit;
+
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* ▼ 影（自然な三角影） */
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -78px;
+      transform: translateX(-50%);
+
+      width: 100%;
+      height: 60px;
+
+      background: rgba(0, 0, 0, 0.05);
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      filter: blur(8px);
+
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* ▼ 中身 */
+    > * {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  /* =========================
+   カード同士の重なり（重要）
+========================= */
+  &__serviceCard-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: start;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+
+  &__serviceCard--02 {
+    background: url("/images/beige_background.png") center center / cover
+      no-repeat;
+    padding-top: 200px;
+
+    &::after {
+      background-image: url("/images/beige_background.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center 78%;
+      filter: blur(2px);
+    }
+
+    @media (max-width: 768px) {
+      padding-top: 160px;
+
+      &::after {
+        background-position: 0 70%;
+        background-size: 183%;
+      }
+    }
+  }
+
+  &__serviceCard--03 {
+    padding-top: 200px;
+
+    @media (max-width: 768px) {
+      padding-top: 160px;
+    }
+  }
+
+  &__serviceCard-media {
+    position: relative;
+  }
+
+  &__serviceCard-imageWrap {
+    position: relative;
+    border: 1px solid #1730b3;
+    padding: 4px;
+    background: #efe3bc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 100%;
+
+    &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 26, 134, 0.25); // 薄い青
+    z-index: 1;
+    pointer-events: none;
+  }
+  }
+
+  &__serviceCard-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  &__serviceCard-number {
+    position: absolute;
+    right: 14px;
+    bottom: 8px;
+    font-family: "Times New Roman", serif;
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    line-height: 1;
+    color: #fff;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+  }
+
+  &__serviceCard-content {
+    color: #081a78;
+    padding-top: 2px;
+  }
+
+  &__serviceCard-title {
+    margin: 0 0 10px;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    font-weight: 700;
+    line-height: 1.5;
+    color: #081a78;
+  }
+
+  &__serviceCard-list {
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      margin: 0 0 6px;
+      padding-left: 1em;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #081a78;
+
+      &::before {
+        content: "♦";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #081a78;
+        font-size: 1.25.25em;
+      }
+    }
+  }
+
+  &__serviceCard-box {
+    max-width: 520px;
+    width: 100%;
+    margin-top: 8px;
+    background: linear-gradient(to top, #050455 0%, #0703ac 100%);
+    border: 1px solid #152ba7;
+    box-shadow: 6px 8px 12px rgba(0, 0, 0, 0.18);
+    padding: 14px 14px 12px;
+
+    @media (max-width: 900px) {
+      max-width: 100%;
+    }
+  }
+
+  &__serviceCard-boxTitle {
+    margin: 0;
+    padding: 0 10px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #fff;
+    text-align: center;
+  }
+
+  &__serviceCard-boxList {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      margin: 0 0 6px;
+      padding: 8px 12px 8px 20px;
+      background: rgba(185, 170, 130, 0.9);
+      color: #081a78;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.5;
+      border-left: 1px solid #081aaf;
+      border-right: 1px solid #081aaf;
+
+      &::before {
+        content: "▪";
+        position: absolute;
+        left: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #081a78;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  // -------------------------
+  // Social support
+  // -------------------------
+  &__social {
+    position: relative;
+    padding: 300px 16px 160px;
+    overflow: hidden;
+    background-color: $color-navy;
+    margin-top: -200px;
+  }
+
+  &__social-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.14) 0%,
+        rgba(255, 255, 255, 0.04) 26%,
+        rgba(0, 0, 0, 0.08) 100%
+      ),
+      url("/images/consulting/consulting-social-background.webp") center
+        center / cover no-repeat;
+    z-index: 0;
+  }
+
+  &__social-panel {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__social-box {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: clamp(28px, 4vw, 48px) clamp(20px, 4vw, 40px);
+    background: rgba(217, 210, 184, 0.82);
+    border: 1px solid rgba(120, 110, 80, 0.28);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(1.5px);
+
+    @media (max-width: 768px) {
+      margin-top: 200px;
+    }
+  }
+
+  &__social-title {
+    margin: 0;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(20, 32, 112, 0.45);
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.4;
+    color: #081a78;
+  }
+
+  &__social-body {
+    margin-top: 24px;
+    color: #081a78;
+
+    p {
+      margin: 0;
+      font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+      line-height: 2.15;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__social {
+      padding: 56px 0 64px;
+    }
+
+    &__social-box {
+      padding: 22px 16px 24px;
+    }
+
+    &__social-title {
+      padding-bottom: 14px;
+      font-size: 1.35rem;
+    }
+
+    &__social-body {
+      margin-top: 18px;
+
+      p {
+        font-size: 0.95rem;
+        line-height: 2;
+      }
+    }
+  }
+}
