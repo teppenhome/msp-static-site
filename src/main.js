@@ -172,22 +172,51 @@ function initGalleryScroll() {
 }
 
 /* ===============================
-   不動産ページ：区切り画像・セクションイントロ画像のパララックス
+   不動産ページ：セクション間区切り画像のみパララックス（3枚・img の y のみ）
 =============================== */
 function initRealestateParallax() {
   if (!isRealestatePage() || prefersReducedMotion()) return;
 
   gsap.utils.toArray(".p-realestate__section-image-img").forEach((img) => {
     const wrap = img.closest(".p-realestate__section-image-wrap");
-    bindImageParallax(img, wrap);
-  });
+    if (!wrap) return;
 
-  gsap.utils
-    .toArray(".p-realestate .c-section__intro .c-section__image img")
-    .forEach((img) => {
-      const wrap = img.closest(".c-section__image");
-      bindImageParallax(img, wrap);
-    });
+    const run = () => {
+      gsap.killTweensOf(img);
+      gsap.set(img, { y: 0 });
+
+      const getY = () => {
+        const ih = img.getBoundingClientRect().height;
+        const wh = wrap.getBoundingClientRect().height;
+        return -Math.max(0, ih - wh);
+      };
+
+      gsap.to(img, {
+        y: getY,
+        ease: "none",
+        scrollTrigger: {
+          trigger: wrap,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
+      });
+    };
+
+    if (img.complete) {
+      run();
+    } else {
+      img.addEventListener(
+        "load",
+        () => {
+          run();
+          ScrollTrigger.refresh();
+        },
+        { once: true },
+      );
+    }
+  });
 }
 
 /* ===============================

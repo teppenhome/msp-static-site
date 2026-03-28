@@ -1023,11 +1023,3 @@
   }
 }
 
-// イントロ右カラム画像：パララックス用に親よりわずかに縦長（.c-section__image は overflow: hidden）
-.p-realestate .c-section__intro .c-section__image img {
-  height: 118%;
-  max-width: none;
-  object-fit: cover;
-  object-position: center center;
-}
-
