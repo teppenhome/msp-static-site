@@ -1,0 +1,195 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.c-pageHero {
+  position: relative;
+  min-height: 500px;
+  background: #081a78;
+
+  @media (max-width: 768px) {
+    min-height: 240px;
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    transform: scale(1);
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: #0500d2;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 20px;
+    padding-top: 110px;
+    padding-bottom: 48px;
+
+    @media (max-width: 768px) {
+      min-height: 280px;
+      padding-top: 90px;
+      padding-bottom: 28px;
+    }
+  }
+
+  &__breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    color: #f6e9b8;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+
+    li + li::before {
+      content: "/";
+      margin-right: 10px;
+      opacity: 0.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(246, 233, 184, 0.55);
+    }
+  }
+
+  &__box {
+    display: inline-block;
+    min-width: 340px;
+    padding: 22px 34px 20px;
+    background: linear-gradient(
+      160deg,
+      rgba(4, 0, 201, 0.35) 0%,
+      rgba(2, 0, 99, 0.8) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 768px) {
+      min-width: auto;
+      width: min(100%, 320px);
+      padding: 18px 20px 16px;
+    }
+  }
+
+  &__en {
+    margin: 0;
+    font-family: "Times New Roman", "Yu Mincho", serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.06em;
+    color: #fff;
+  }
+
+  &__ja {
+    margin: 10px 0 0;
+    font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+    color: #fff;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+.c-sectionIntro {
+  position: relative;
+  padding: 60px 16px 0;
+  text-align: center;
+  z-index: 10;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -80px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+    z-index: 1;
+  }
+
+  &__inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  &__text {
+    margin: 0;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(1.1rem, 2.2vw, 1.75rem);
+    line-height: 1.9;
+    letter-spacing: 0.08em;
+
+    color: #f6e9b8;
+
+    text-shadow:
+      0 0 2px rgba(255, 235, 170, 0.45),
+      0 0 8px rgba(255, 220, 140, 0.35);
+
+    @media (max-width: 768px) {
+      line-height: 1.8;
+    }
+  }
+
+  &__intro {
+    position: relative;
+    background: #050455;
+    padding: 60px 16px 0;
+    text-align: center;
+    z-index: 10;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -80px;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 50vw solid transparent;
+      border-right: 50vw solid transparent;
+      border-top: 80px solid #050455;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      padding: 30px 16px 10px;
+
+      &::after {
+        bottom: -40px;
+        border-top: 40px solid #050455;
+      }
+    }
+  }
+}

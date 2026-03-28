@@ -3,6 +3,26 @@
 // ========================================
 @use "variables" as *;
 
+html {
+  scroll-behavior: smooth;
+}
+
+.u-sp-br {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: inline;
+  }
+}
+
+.u-pc-br {
+  display: inline;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
 .l-container {
   max-width: $container-max;
   margin: 0 auto;

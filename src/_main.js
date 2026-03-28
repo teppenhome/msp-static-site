@@ -4,25 +4,20 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function isRealestatePage() {
-  return document.body.classList.contains("p-realestate");
-}
-
-function prefersReducedMotion() {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
-
 /* ===============================
-   Section title animation (top / consulting / real-estate 共通)
+   DOMContentLoaded
 =============================== */
-function initFadeInView() {
+document.addEventListener("DOMContentLoaded", () => {
+  /* ===============================
+     セクションタイトル アニメーション
+  =============================== */
   const fadeEls = document.querySelectorAll(".js-fade");
-  if (!fadeEls.length) return;
 
   const io = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
+
         entry.target.classList.add("is-inview");
         observer.unobserve(entry.target);
       });
@@ -34,12 +29,10 @@ function initFadeInView() {
   );
 
   fadeEls.forEach((el) => io.observe(el));
-}
 
-/* ===============================
-   Drawer menu
-=============================== */
-function initDrawer() {
+  /* ===============================
+     ドロワーメニュー（スマホ用）
+  =============================== */
   const DRAWER_BREAKPOINT = 768;
   const drawer = document.getElementById("c-drawer");
   const drawerPanel = document.getElementById("c-drawer__panel");
@@ -114,126 +107,68 @@ function initDrawer() {
     if (!isSpViewport() && isDrawerOpen()) closeDrawer();
   });
 
+  // ドロワー内リンククリックで閉じる（SPでのスムーズな遷移）
   drawer?.querySelectorAll(".c-drawer__link").forEach((link) => {
     link.addEventListener("click", () => {
       if (isDrawerOpen()) closeDrawer();
     });
   });
-}
 
-/* ===============================
-   画像パララックス（top ギャラリー）
-=============================== */
-function bindImageParallax(img, wrap) {
-  if (!img || !wrap) return;
-
-  const getY = () => {
-    const ih = img.getBoundingClientRect().height;
-    const wh = wrap.getBoundingClientRect().height;
-    return -Math.max(0, ih - wh);
-  };
-
-  const setup = () => {
-    gsap.killTweensOf(img);
-    gsap.set(img, { y: 0 });
-
-    gsap.to(img, {
-      y: getY,
-      ease: "none",
-      scrollTrigger: {
-        trigger: wrap,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-        invalidateOnRefresh: true,
-      },
-    });
-  };
-
-  if (img.complete) {
-    setup();
-  } else {
-    img.addEventListener("load", () => {
-      setup();
-      ScrollTrigger.refresh();
-    });
-  }
-
-  ScrollTrigger.addEventListener("refreshInit", setup);
-}
-
-function initGalleryScroll() {
-  if (prefersReducedMotion()) return;
-
+  /* ===============================
+     ギャラリー ScrollTrigger
+  =============================== */
   gsap.utils.toArray(".p-front__gallery-img").forEach((img) => {
     const wrap = img.closest(".p-front__gallery-img-wrap");
-    bindImageParallax(img, wrap);
+    if (!wrap) return;
+
+    const getY = () => {
+      const ih = img.getBoundingClientRect().height;
+      const wh = wrap.getBoundingClientRect().height;
+      return -Math.max(0, ih - wh);
+    };
+
+    const setup = () => {
+      gsap.killTweensOf(img);
+      gsap.set(img, { y: 0 });
+
+      gsap.to(img, {
+        y: getY, // ← 関数で渡す（refresh時に再計算される）
+        ease: "none",
+        scrollTrigger: {
+          trigger: wrap,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
+      });
+    };
+
+    if (img.complete) {
+      setup();
+    } else {
+      img.addEventListener("load", () => {
+        setup();
+        ScrollTrigger.refresh();
+      });
+    }
+
+    ScrollTrigger.addEventListener("refreshInit", setup);
   });
-}
-
-/* ===============================
-   不動産ページ：区切り画像・セクションイントロ画像のパララックス
-=============================== */
-function initRealestateParallax() {
-  if (!isRealestatePage() || prefersReducedMotion()) return;
-
-  gsap.utils.toArray(".p-realestate__section-image-img").forEach((img) => {
-    const wrap = img.closest(".p-realestate__section-image-wrap");
-    bindImageParallax(img, wrap);
-  });
-
-  gsap.utils
-    .toArray(".p-realestate .c-section__intro .c-section__image img")
-    .forEach((img) => {
-      const wrap = img.closest(".c-section__image");
-      bindImageParallax(img, wrap);
-    });
-}
-
-/* ===============================
-   FAQ accordion（real-estate）
-=============================== */
-function initRealestateSellFaq() {
-  const items = document.querySelectorAll(".c-section__faq-item");
-  if (!items.length) return;
-
-  items.forEach((item) => {
-    const button = item.querySelector(".c-section__faq-question");
-    if (!button) return;
-
-    button.setAttribute(
-      "aria-expanded",
-      String(item.classList.contains("is-open")),
-    );
-
-    button.addEventListener("click", () => {
-      const wasOpen = item.classList.contains("is-open");
-      item.classList.toggle("is-open");
-      button.setAttribute("aria-expanded", String(!wasOpen));
-    });
-  });
-}
-
-/* ===============================
-   On DOMContentLoaded
-=============================== */
-document.addEventListener("DOMContentLoaded", () => {
-  initFadeInView();
-  initDrawer();
-  initGalleryScroll();
-  initRealestateParallax();
-  initRealestateSellFaq();
 });
 
 /* ===============================
-   On window load
+   window load（表示後に実行したい処理）
 =============================== */
 window.addEventListener("load", () => {
+  /* ヒーローテキスト フェードイン */
   const heroes = document.querySelectorAll(".js-hero-reveal");
+
   heroes.forEach((hero) => {
     hero.classList.add("is-visible");
   });
 
+  /* ローディングを消す */
   const loader = document.querySelector(".c-loading");
 
   if (loader) {
@@ -243,6 +178,7 @@ window.addEventListener("load", () => {
     setTimeout(() => {
       loader.remove();
 
+      // トップページの背景スライドをリセットして再スタート
       const heroBg = document.querySelector(".p-front__hero-bg");
       if (heroBg) {
         heroBg.classList.remove("is-play");
@@ -255,4 +191,27 @@ window.addEventListener("load", () => {
   } else {
     ScrollTrigger.refresh();
   }
+});
+
+//FAQアコーディオン
+function initRealestateSellFaq() {
+  const items = document.querySelectorAll(".p-realestate-sell__faq-item");
+  if (!items.length) return;
+
+  items.forEach((item) => {
+    const button = item.querySelector(".p-realestate-sell__faq-question");
+    if (!button) return;
+
+    button.addEventListener("click", () => {
+      const isOpen = item.classList.contains("is-open");
+
+      item.classList.toggle("is-open");
+
+      button.setAttribute("aria-expanded", String(!isOpen));
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initRealestateSellFaq();
 });

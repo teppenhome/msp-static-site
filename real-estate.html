@@ -1,0 +1,1069 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <title>MSP - Real Estate</title>
+  </head>
+  <body class="p-realestate">
+    <div class="c-loading">
+      <p class="c-loading__text">Loading...</p>
+    </div>
+
+    <header class="l-header">
+      <div class="l-container l-header__inner">
+        <h1 class="l-header__logo">
+          <a href="/">
+            <img src="/images/logo-gold.png" alt="MSP" />
+          </a>
+        </h1>
+
+        <nav class="l-header__nav" aria-label="メインナビゲーション">
+          <ul class="l-header__nav-list">
+            <li class="l-header__nav-item">
+              <a href="/" class="l-header__nav-link">
+                <span class="l-header__nav-en">HOME</span>
+                <span class="l-header__nav-ja">ホーム</span>
+              </a>
+            </li>
+            <li class="l-header__nav-item">
+              <a href="/consulting.html" class="l-header__nav-link">
+                <span class="l-header__nav-en">CONSULTING</span>
+                <span class="l-header__nav-ja">コンサルティング</span>
+              </a>
+            </li>
+            <li class="l-header__nav-item">
+              <a href="/real-estate.html" class="l-header__nav-link is-active">
+                <span class="l-header__nav-en">REAL ESTATE</span>
+                <span class="l-header__nav-ja">不動産事業</span>
+              </a>
+            </li>
+            <li class="l-header__nav-item">
+              <a href="/#company" class="l-header__nav-link">
+                <span class="l-header__nav-en">COMPANY</span>
+                <span class="l-header__nav-ja">会社概要</span>
+              </a>
+            </li>
+            <li class="l-header__nav-item">
+              <a href="/#recruit" class="l-header__nav-link">
+                <span class="l-header__nav-en">RECRUIT</span>
+                <span class="l-header__nav-ja">リクルート</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          type="button"
+          class="c-hamburger"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="c-drawer__panel"
+          id="c-hamburger-trigger"
+        >
+          <span class="c-hamburger__line c-hamburger__line--top"></span>
+          <span class="c-hamburger__line c-hamburger__line--bot"></span>
+        </button>
+      </div>
+    </header>
+
+    <div
+      class="c-drawer"
+      id="c-drawer"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="メニュー"
+    >
+      <div
+        class="c-drawer__backdrop"
+        id="c-drawer-backdrop"
+        aria-hidden="true"
+      ></div>
+      <div class="c-drawer__panel" id="c-drawer__panel" tabindex="-1">
+        <button
+          type="button"
+          class="c-drawer__close"
+          aria-label="メニューを閉じる"
+          id="c-drawer-close"
+        >
+          <span class="c-drawer__close-line c-drawer__close-line--1"></span>
+          <span class="c-drawer__close-line c-drawer__close-line--2"></span>
+        </button>
+        <nav class="c-drawer__nav" aria-label="ドロワーメニュー">
+          <ul class="c-drawer__list">
+            <li class="c-drawer__item">
+              <a href="/" class="c-drawer__link">
+                <span class="c-drawer__en">HOME</span>
+                <span class="c-drawer__ja">ホーム</span>
+              </a>
+            </li>
+            <li class="c-drawer__item">
+              <a href="/consulting.html" class="c-drawer__link">
+                <span class="c-drawer__en">CONSULTING</span>
+                <span class="c-drawer__ja">コンサルティング</span>
+              </a>
+            </li>
+            <li class="c-drawer__item">
+              <a href="/real-estate.html" class="c-drawer__link is-active">
+                <span class="c-drawer__en">REAL ESTATE</span>
+                <span class="c-drawer__ja">不動産事業</span>
+              </a>
+            </li>
+            <li class="c-drawer__item">
+              <a href="/#company" class="c-drawer__link">
+                <span class="c-drawer__en">COMPANY</span>
+                <span class="c-drawer__ja">会社概要</span>
+              </a>
+            </li>
+            <li class="c-drawer__item">
+              <a href="/#recruit" class="c-drawer__link">
+                <span class="c-drawer__en">RECRUIT</span>
+                <span class="c-drawer__ja">リクルート</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main class="p-realestate__main">
+      <!-- Hero -->
+      <section class="c-pageHero p-realestate__hero">
+        <div class="c-pageHero__bg">
+          <div class="c-pageHero__img p-realestate__hero-img"></div>
+          <div class="c-pageHero__overlay"></div>
+        </div>
+
+        <div class="l-container c-pageHero__inner js-hero-reveal">
+          <div class="c-pageHero__box">
+            <p class="c-pageHero__en">REAL ESTATE</p>
+            <p class="c-pageHero__ja">不動産事業</p>
+          </div>
+
+          <nav class="c-pageHero__breadcrumb" aria-label="パンくず">
+            <ol class="c-pageHero__breadcrumb-list">
+              <li><a href="/">HOME</a></li>
+              <li aria-current="page">不動産事業</li>
+            </ol>
+          </nav>
+        </div>
+      </section>
+
+      <!-- Intro -->
+      <section class="c-sectionIntro c-sectionIntro__intro">
+        <div class="c-sectionIntro__inner js-hero-reveal">
+          <p class="c-sectionIntro__text">
+            暮らしと未来を見据えた、<br class="u-sp-br" />不動産のパートナー<br />日常の安心から資産設計まで<br />丁寧に寄り添います
+          </p>
+        </div>
+      </section>
+
+      <section class="p-realestate__intro">
+        <div class="p-realestate__intro-inner l-container">
+          <p class="p-realestate__intro-lead js-fade">
+            不動産に関するお困りごと、<br class="u-sp-br" />何でもご相談ください<br />
+            当社では、お客様に合った最適なご提案を<br class="u-sp-br" />させていただきますので、<br />
+            まずは詳しいお話をお聞かせください。
+          </p>
+
+          <div class="p-realestate__intro-content">
+            <div class="p-realestate__intro-textBox js-fade">
+              <p class="p-realestate__intro-text">
+                MSPでは、不動産の取得・運用・売却など<br />
+                不動産に関わる様々な事業を展開しています。<br />
+                市場分析と戦略設計をもとに、<br />
+                不動産の価値向上と最適な活用を支援します。
+              </p>
+            </div>
+
+            <figure class="p-realestate__intro-imageWrap js-fade">
+              <img
+                class="p-realestate__intro-image"
+                src="/images/real-estate/page-estate01.webp"
+                alt="都市の高層ビル群"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-realestate__menu">
+        <div class="p-realestate__menu-inner l-container">
+          <div class="p-realestate__menu-grid">
+            <a href="#sell" class="p-realestate__menu-card js-fade">
+              <img
+                class="p-realestate__menu-image"
+                src="/images/real-estate/estate-service01.webp"
+                alt="物件を売りたい方"
+              />
+              <span class="p-realestate__menu-label">
+                <span class="p-realestate__menu-text">物件を売りたい方</span>
+                <span class="p-realestate__menu-arrow"></span>
+              </span>
+            </a>
+
+            <a href="#buy" class="p-realestate__menu-card js-fade">
+              <img
+                class="p-realestate__menu-image"
+                src="/images/real-estate/estate-service02.webp"
+                alt="物件を買いたい方"
+              />
+              <span class="p-realestate__menu-label">
+                <span class="p-realestate__menu-text">物件を買いたい方</span>
+                <span class="p-realestate__menu-arrow"></span>
+              </span>
+            </a>
+
+            <a href="#rent" class="p-realestate__menu-card js-fade">
+              <img
+                class="p-realestate__menu-image"
+                src="/images/real-estate/estate-service03.webp"
+                alt="物件を借りたい方"
+              />
+              <span class="p-realestate__menu-label">
+                <span class="p-realestate__menu-text">物件を借りたい方</span>
+                <span class="p-realestate__menu-arrow"></span>
+              </span>
+            </a>
+
+            <a href="#investment" class="p-realestate__menu-card js-fade">
+              <img
+                class="p-realestate__menu-image"
+                src="/images/real-estate/estate-service04.webp"
+                alt="不動産投資をされる方"
+              />
+              <span class="p-realestate__menu-label">
+                <span class="p-realestate__menu-text">不動産投資をされる方</span>
+                <span class="p-realestate__menu-arrow"></span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="sell" class="c-section p-realestate-sell">
+        <div class="c-section__inner">
+          <header class="c-section__head">
+            <h2 class="c-section__title js-fade">物件を売りたい方</h2>
+          </header>
+
+          <div class="c-section__intro">
+            <div class="c-section__textBox js-fade">
+              <p class="c-section__text">
+                大切な不動産の売却は、金額だけでなくタイミングや売り方の選択が重要になります。<br />私たちは一件一件の状況を丁寧に整理し、将来につながる売却プランをご提案します。
+              </p>
+            </div>
+
+            <div class="c-section__image js-fade">
+              <img src="/images/real-estate/estate-service01.webp" alt="不動産売却のご相談イメージ" />
+            </div>
+          </div>
+
+          <div class="c-section__flow">
+            <h3 class="c-section__block-title js-fade">売却の流れ</h3>
+
+            <div class="c-section__flow-list">
+              <article class="c-section__flow-item js-fade">
+                <div class="c-section__flow-step">
+                  <span class="c-section__flow-stepText">STEP</span>
+                  <span class="c-section__flow-stepNum">1</span>
+                </div>
+                <div class="c-section__flow-content">
+                  <h4 class="c-section__flow-itemTitle">ご相談</h4>
+                  <p class="c-section__flow-text">
+                    今の状況やお考えをお伺いします。<br class="u-pc-br" />
+                    売却を決めていない段階でもご相談いただけます。
+                  </p>
+                </div>
+              </article>
+
+              <article class="c-section__flow-item js-fade">
+                <div class="c-section__flow-step">
+                  <span class="c-section__flow-stepText">STEP</span>
+                  <span class="c-section__flow-stepNum">2</span>
+                </div>
+                <div class="c-section__flow-content">
+                  <h4 class="c-section__flow-itemTitle">査定・ご説明</h4>
+                  <p class="c-section__flow-text">
+                    相談頂いた物件の相場や価格の目安を、分かりやすくご説明します。<br class="u-pc-br" />
+                    数字の理由も丁寧にお伝えします。
+                  </p>
+                </div>
+              </article>
+
+              <article class="c-section__flow-item js-fade">
+                <div class="c-section__flow-step">
+                  <span class="c-section__flow-stepText">STEP</span>
+                  <span class="c-section__flow-stepNum">3</span>
+                </div>
+                <div class="c-section__flow-content">
+                  <h4 class="c-section__flow-itemTitle">売却準備・販売活動</h4>
+                  <p class="c-section__flow-text">
+                    媒介契約のご説明・締結を行います。<br class="u-pc-br" />
+                    ホームページ掲載・ポータルサイトへの登録・内覧対応など、効果的な販売活動を進めます。
+                  </p>
+                </div>
+              </article>
+
+              <article class="c-section__flow-item js-fade">
+                <div class="c-section__flow-step">
+                  <span class="c-section__flow-stepText">STEP</span>
+                  <span class="c-section__flow-stepNum">4</span>
+                </div>
+                <div class="c-section__flow-content">
+                  <h4 class="c-section__flow-itemTitle">契約・引き渡し</h4>
+                  <p class="c-section__flow-text">
+                    契約条件の調整や手続きのサポートを行い、取引を安心して進められるよう伴走します。
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="c-section__support">
+            <h3 class="c-section__block-title js-fade">売却サポートの特徴</h3>
+
+            <div class="c-section__support-box js-fade">
+              <p class="c-section__support-text">
+                売却を進めるうえでの不安を減らすため、第三者機関による住宅設備の補償保険を付帯し、安心材料のある住まいとしてご提案することが可能です。（※別途オプションとなるか要確認）<br />また、ハウスクリーニングや残置物の処理をはじめ、リフォーム、引越し、建物解体、測量、登記、シロアリ検査など、売却に伴うさまざまな手続きをトータルでサポート。<br />売却後に必要となる確定申告についても、状況に応じて分かりやすくアドバイスいたします。
+              </p>
+            </div>
+          </div>
+
+          <div class="c-section__faq">
+            <h3 class="c-section__block-title js-fade">よくある質問</h3>
+
+            <div class="c-section__faq-list js-fade">
+              <article class="c-section__faq-item">
+                <button
+                  type="button"
+                  class="c-section__faq-question"
+                  aria-expanded="false"
+                >
+                  <span class="c-section__faq-q">Q.</span>
+                  <span class="c-section__faq-questionText">
+                    売却査定は無料ですか？
+                  </span>
+                  <span class="c-section__faq-icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="c-section__faq-answer">
+                  <div class="c-section__faq-answerInner">
+                    <span class="c-section__faq-a">A.</span>
+                    <p class="c-section__faq-answerText">
+                      はい。査定は無料で承っております。ご希望条件や状況に応じて最適なアドバイスをいたします。
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="c-section__faq-item">
+                <button
+                  type="button"
+                  class="c-section__faq-question"
+                  aria-expanded="false"
+                >
+                  <span class="c-section__faq-q">Q.</span>
+                  <span class="c-section__faq-questionText">
+                    住みながら売却することはできますか？
+                  </span>
+                  <span class="c-section__faq-icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="c-section__faq-answer">
+                  <div class="c-section__faq-answerInner">
+                    <span class="c-section__faq-a">A.</span>
+                    <p class="c-section__faq-answerText">
+                      もちろん可能です。住みながらの売却をご希望の場合は、内覧の進め方やスケジュールについてもご相談しながら調整します。ご負担が大きくならないよう配慮しながら進めます。
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="c-section__faq-item">
+                <button
+                  type="button"
+                  class="c-section__faq-question"
+                  aria-expanded="false"
+                >
+                  <span class="c-section__faq-q">Q.</span>
+                  <span class="c-section__faq-questionText">
+                    周囲に知られずに売却することはできますか？
+                  </span>
+                  <span class="c-section__faq-icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="c-section__faq-answer">
+                  <div class="c-section__faq-answerInner">
+                    <span class="c-section__faq-a">A.</span>
+                    <p class="c-section__faq-answerText">
+                      はい、ご希望に応じた進め方をご提案します。広告の出し方や販売方法についてもご相談しながら決めていきますので、プライバシー面が気になる方もご安心ください。
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="p-realestate__section-image">
+        <div class="p-realestate__section-image-wrap">
+          <img
+            class="p-realestate__section-image-img"
+            src="/images/real-estate/e-section-divider01.webp"
+            alt="不動産イメージ"
+          />
+        </div>
+      </div>
+
+      <section id="buy" class="c-section p-realestate-buy">
+        <div class="c-section__inner">
+          <header class="c-section__head">
+            <h2 class="c-section__title js-fade">物件を買いたい方</h2>
+          </header>
+
+          <div class="c-section__intro">
+            <div class="c-section__textBox js-fade">
+              <p class="c-section__text">
+                お客様の希望する立地、間取り、ライフスタイルを丁寧に伺い、東京の市場から最適な物件をご提案します<br />物件探しだけではなく、購入に至るまでの手続きや判断ポイントもわかりやすくお伝えし、安心して進めていただけるようサポートします。
+              </p>
+            </div>
+
+            <div class="c-section__image js-fade">
+              <img src="/images/real-estate/estate-service02.webp" alt="不動産売却のご相談イメージ" />
+            </div>
+          </div>
+
+          <div class="c-section__flow">
+            <h3 class="c-section__block-title js-fade">購入の流れ</h3>
+
+            <div class="c-section__flow-list">
+              <article class="c-section__flow-item js-fade">
+                <div class="c-section__flow-step">
+                  <span class="c-section__flow-stepText">STEP</span>
+                  <span class="c-section__flow-stepNum">1</span>
+                </div>
+                <div class="c-section__flow-content">
+                  <h4 class="c-section__flow-itemTitle">ご相談</h4>
+                  <p class="c-section__flow-text">
+                    ご希望やお悩みを丁寧にお伺いします。<br />まだ購入を決めていない段階でもご相談いただけます。
+                  </p>
+                </div>
+              </article>
+
+              <article class="c-section__flow-item js-fade">
+                <div class="c-section__flow-step">
+                  <span class="c-section__flow-stepText">STEP</span>
+                  <span class="c-section__flow-stepNum">2</span>
+                </div>
+                <div class="c-section__flow-content">
+                  <h4 class="c-section__flow-itemTitle">条件整理・ご提案</h4>
+                  <p class="c-section__flow-text">
+                    ご予算やエリア、条件を整理し、ご希望に合う物件をご紹介します。
+                  </p>
+                </div>
+              </article>
+
+              <article class="c-section__flow-item js-fade">
+                <div class="c-section__flow-step">
+                  <span class="c-section__flow-stepText">STEP</span>
+                  <span class="c-section__flow-stepNum">3</span>
+                </div>
+                <div class="c-section__flow-content">
+                  <h4 class="c-section__flow-itemTitle">物件見学・検討</h4>
+                  <p class="c-section__flow-text">
+                    実際に物件をご覧いただきながら、気になる点を一つずつ確認します。
+                  </p>
+                </div>
+              </article>
+
+              <article class="c-section__flow-item js-fade">
+                <div class="c-section__flow-step">
+                  <span class="c-section__flow-stepText">STEP</span>
+                  <span class="c-section__flow-stepNum">4</span>
+                </div>
+                <div class="c-section__flow-content">
+                  <h4 class="c-section__flow-itemTitle">契約・引き渡し</h4>
+                  <p class="c-section__flow-text">
+                    契約内容を確認しながら手続きを進め、お引き渡しまで一貫してサポートします。
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="c-section__support">
+            <h3 class="c-section__block-title js-fade">購入サポートの特徴</h3>
+
+            <div class="c-section__support-box js-fade">
+              <p class="c-section__support-text">
+                ご購入までの流れをスムーズに進められるよう、住宅ローンのご相談からお申込み手続きまで丁寧にサポートします。<br />あわせて、ハウスクリーニングやリフォーム、登記手続き、火災保険のお見積り・ご提案など、購入時に必要となる準備を幅広くご案内します。<br />ご入居後を見据え、確定申告や住宅ローン控除のポイント、管理組合とのやり取り、将来的なメンテナンス、賃貸や売却のご相談まで、長く安心して暮らしていただくためのサポートを行います。
+              </p>
+            </div>
+          </div>
+
+          <div class="c-section__faq">
+            <h3 class="c-section__block-title js-fade">よくある質問</h3>
+
+            <div class="c-section__faq-list js-fade">
+              <article class="c-section__faq-item">
+                <button
+                  type="button"
+                  class="c-section__faq-question"
+                  aria-expanded="false"
+                >
+                  <span class="c-section__faq-q">Q.</span>
+                  <span class="c-section__faq-questionText">
+                    相談だけでも大丈夫ですか?
+                  </span>
+                  <span class="c-section__faq-icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="c-section__faq-answer">
+                  <div class="c-section__faq-answerInner">
+                    <span class="c-section__faq-a">A.</span>
+                    <p class="c-section__faq-answerText">
+                      はい、大丈夫です。購入を決めていない段階でも、お話を伺いながら状況を整理します。
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="c-section__faq-item">
+                <button
+                  type="button"
+                  class="c-section__faq-question"
+                  aria-expanded="false"
+                >
+                  <span class="c-section__faq-q">Q.</span>
+                  <span class="c-section__faq-questionText">
+                    費用はいつからかかりますか?
+                  </span>
+                  <span class="c-section__faq-icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="c-section__faq-answer">
+                  <div class="c-section__faq-answerInner">
+                    <span class="c-section__faq-a">A.</span>
+                    <p class="c-section__faq-answerText">
+                      ご相談や物件探しの段階では費用はかかりません。実際に取引が成立した際に、所定の手数料が発生します。
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="c-section__faq-item">
+                <button
+                  type="button"
+                  class="c-section__faq-question"
+                  aria-expanded="false"
+                >
+                  <span class="c-section__faq-q">Q.</span>
+                  <span class="c-section__faq-questionText">
+                    不動産の知識がなくても問題ありませんか?
+                  </span>
+                  <span class="c-section__faq-icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="c-section__faq-answer">
+                  <div class="c-section__faq-answerInner">
+                    <span class="c-section__faq-a">A.</span>
+                    <p class="c-section__faq-answerText">
+                      もちろん問題ありません。専門用語はできるだけ使わず、分かりやすくご説明することを心がけています。
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <p class="p-realestate__intro-lead js-fade">
+            不動産の購入は物件を選ぶだけでなく、<br />これからの暮らしや資金計画を考える大切な機会です。<br />私たちは一つひとつ確認しながら、納得できる購入をサポートします。
+          </p>
+
+        </div>
+      </section>
+
+      <div class="p-realestate__section-image">
+        <div class="p-realestate__section-image-wrap">
+          <img
+            class="p-realestate__section-image-img"
+            src="/images/real-estate/e-section-divider02.webp"
+            alt="不動産イメージ"
+          />
+        </div>
+      </div>
+
+      <section id="rent" class="c-section p-realestate-rent">
+        <div class="c-section__inner">
+          <header class="c-section__head">
+            <h2 class="c-section__title js-fade">物件を借りたい方</h2>
+          </header>
+
+          <div class="c-section__intro">
+            <div class="c-section__textBox js-fade">
+              <p class="c-section__text">
+                賃貸探しでは、「エリア選びで迷う」「条件をどう決めればいいか分からない」といったご相談を多くいただきます。<br />私たちは、まずご希望や優先順位を整理するところから始めます。立地や間取りだけでなく、周辺環境や暮らしやすさも踏まえて、無理のない住まい選びをサポートします。
+              </p>
+            </div>
+
+            <div class="c-section__image js-fade">
+              <img src="/images/real-estate/estate-service03.webp" alt="賃貸探しのご相談イメージ" />
+            </div>
+          </div>
+
+          <div class="c-section__flow">
+            <h3 class="c-section__block-title js-fade">お部屋を借りるまでの流れ</h3>
+
+            <div class="c-section__flow-list">
+              <article class="c-section__flow-item js-fade">
+                <div class="c-section__flow-step">
+                  <span class="c-section__flow-stepText">STEP</span>
+                  <span class="c-section__flow-stepNum">1</span>
+                </div>
+                <div class="c-section__flow-content">
+                  <h4 class="c-section__flow-itemTitle">ご相談</h4>
+                  <p class="c-section__flow-text">
+                    家賃やエリア、入居時期など、今の暮らしに合う条件を一緒に整理します。
+                  </p>
+                </div>
+              </article>
+
+              <article class="c-section__flow-item js-fade">
+                <div class="c-section__flow-step">
+                  <span class="c-section__flow-stepText">STEP</span>
+                  <span class="c-section__flow-stepNum">2</span>
+                </div>
+                <div class="c-section__flow-content">
+                  <h4 class="c-section__flow-itemTitle">物件のご提案</h4>
+                  <p class="c-section__flow-text">
+                    条件に合う物件をお探しし、周辺環境や暮らしやすさも含めてご案内します。
+                  </p>
+                </div>
+              </article>
+
+              <article class="c-section__flow-item js-fade">
+                <div class="c-section__flow-step">
+                  <span class="c-section__flow-stepText">STEP</span>
+                  <span class="c-section__flow-stepNum">3</span>
+                </div>
+                <div class="c-section__flow-content">
+                  <h4 class="c-section__flow-itemTitle">物件見学・検討</h4>
+                  <p class="c-section__flow-text">
+                    実際に物件をご覧いただき、内見を通して、写真や図面では分からない点を確認します。
+                  </p>
+                </div>
+              </article>
+
+              <article class="c-section__flow-item js-fade">
+                <div class="c-section__flow-step">
+                  <span class="c-section__flow-stepText">STEP</span>
+                  <span class="c-section__flow-stepNum">4</span>
+                </div>
+                <div class="c-section__flow-content">
+                  <h4 class="c-section__flow-itemTitle">契約・ご入居</h4>
+                  <p class="c-section__flow-text">
+                    契約内容を確認しながら手続きを進め、ご入居までサポートします。
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="c-section__faq">
+            <h3 class="c-section__block-title js-fade">よくある質問</h3>
+
+            <div class="c-section__faq-list js-fade">
+              <article class="c-section__faq-item">
+                <button
+                  type="button"
+                  class="c-section__faq-question"
+                  aria-expanded="false"
+                >
+                  <span class="c-section__faq-q">Q.</span>
+                  <span class="c-section__faq-questionText">
+                    条件がまだはっきり決まっていなくても相談できますか?
+                  </span>
+                  <span class="c-section__faq-icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="c-section__faq-answer">
+                  <div class="c-section__faq-answerInner">
+                    <span class="c-section__faq-a">A.</span>
+                    <p class="c-section__faq-answerText">
+                      はい、問題ありません。お話を伺いながら条件整理からお手伝いします。
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="c-section__faq-item">
+                <button
+                  type="button"
+                  class="c-section__faq-question"
+                  aria-expanded="false"
+                >
+                  <span class="c-section__faq-q">Q.</span>
+                  <span class="c-section__faq-questionText">
+                    初期費用についても相談できますか?
+                  </span>
+                  <span class="c-section__faq-icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="c-section__faq-answer">
+                  <div class="c-section__faq-answerInner">
+                    <span class="c-section__faq-a">A.</span>
+                    <p class="c-section__faq-answerText">
+                      はい。目安となる金額や内訳について、分かりやすくご説明します。
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="c-section__faq-item">
+                <button
+                  type="button"
+                  class="c-section__faq-question"
+                  aria-expanded="false"
+                >
+                  <span class="c-section__faq-q">Q.</span>
+                  <span class="c-section__faq-questionText">
+                    内見は必ず行う必要がありますか?
+                  </span>
+                  <span class="c-section__faq-icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="c-section__faq-answer">
+                  <div class="c-section__faq-answerInner">
+                    <span class="c-section__faq-a">A.</span>
+                    <p class="c-section__faq-answerText">
+                      状況に応じてご相談いただけます。ご希望を伺いながら進めます。
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="p-realestate__section-image">
+        <div class="p-realestate__section-image-wrap">
+          <img
+            class="p-realestate__section-image-img"
+            src="/images/real-estate/e-section-divider03.webp"
+            alt="不動産イメージ"
+          />
+        </div>
+      </div>
+
+      <section id="investment" class="c-section p-realestate-investment">
+        <div class="c-section__inner">
+          <header class="c-section__head">
+            <h2 class="c-section__title js-fade">不動産投資を検討中の方</h2>
+          </header>
+
+          <div class="c-section__intro">
+            <div class="c-section__textBox js-fade">
+              <p class="c-section__text">
+                資産運用には、正解が一つあるわけではありません。収益性だけでなく、リスクや将来の使い道も含めて考えることが大切です。<br />私たちは、お客様それぞれの状況に合わせて、現実的で続けやすい選択肢をご提案します
+              </p>
+            </div>
+
+            <div class="c-section__image js-fade">
+              <img src="/images/real-estate/estate-service04.webp" alt="賃貸探しのご相談イメージ" />
+            </div>
+          </div>
+
+          <div class="p-realestate-investment__support">
+            <h3 class="c-section__block-title js-fade">資産運用サポート内容</h3>
+
+            <div class="p-realestate-investment__grid">
+              <article class="p-realestate-investment__card js-fade">
+                <div class="p-realestate-investment__imageWrap">
+                  <img
+                    src="/images/real-estate/support01.webp"
+                    alt="資産の整理・現状把握"
+                    class="p-realestate-investment__image"
+                  />
+                  <div class="p-realestate-investment__overlay">
+                    <span class="p-realestate-investment__number"># 01</span>
+                    <h3 class="p-realestate-investment__cardTitle">
+                      資産の整理・現状把握
+                    </h3>
+                  </div>
+                </div>
+                <p class="p-realestate-investment__text">
+                  お持ちの不動産や資産状況を整理し、どのような選択肢が考えられるかを分かりやすく共有します。
+                </p>
+              </article>
+
+              <article class="p-realestate-investment__card js-fade">
+                <div class="p-realestate-investment__imageWrap">
+                  <img
+                    src="/images/real-estate/support02.webp"
+                    alt="方針の検討・プラン設計"
+                    class="p-realestate-investment__image"
+                  />
+                  <div class="p-realestate-investment__overlay">
+                    <span class="p-realestate-investment__number"># 02</span>
+                    <h3 class="p-realestate-investment__cardTitle">
+                      方針の検討・プラン設計
+                    </h3>
+                  </div>
+                </div>
+                <p class="p-realestate-investment__text">
+                  保有・売却・活用などの選択肢を比較しながら、ご希望や将来設計に合った方向性を検討します。
+                </p>
+              </article>
+
+              <article class="p-realestate-investment__card js-fade">
+                <div class="p-realestate-investment__imageWrap">
+                  <img
+                    src="/images/real-estate/support03.webp"
+                    alt="専門家との連携サポート"
+                    class="p-realestate-investment__image"
+                  />
+                  <div class="p-realestate-investment__overlay">
+                    <span class="p-realestate-investment__number"># 03</span>
+                    <h3 class="p-realestate-investment__cardTitle">
+                      専門家との連携サポート
+                    </h3>
+                  </div>
+                </div>
+                <p class="p-realestate-investment__text">
+                  必要に応じて、税務や法務など専門家と連携し、判断に必要な情報を整理します。
+                </p>
+              </article>
+
+              <article class="p-realestate-investment__card js-fade">
+                <div class="p-realestate-investment__imageWrap">
+                  <img
+                    src="/images/real-estate/support04.webp"
+                    alt="実行・見直しのサポート"
+                    class="p-realestate-investment__image"
+                  />
+                  <div class="p-realestate-investment__overlay">
+                    <span class="p-realestate-investment__number"># 04</span>
+                    <h3 class="p-realestate-investment__cardTitle">
+                      実行・見直しのサポート
+                    </h3>
+                  </div>
+                </div>
+                <p class="p-realestate-investment__text">
+                  方針が決まった後も、状況の変化に応じて定期的な見直しやご相談に対応します。
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="p-realestate-investment__consult">
+            <h3 class="c-section__block-title js-fade">
+              このようなご相談をいただいています
+            </h3>
+
+            <div class="p-realestate-investment__consult-list">
+              <div class="p-realestate-investment__consult-item js-fade">
+                <span class="p-realestate-investment__consult-icon" aria-hidden="true">♦</span>
+                <p class="p-realestate-investment__consult-text">
+                  不動産を資産としてどう考えればよいか分からない
+                </p>
+              </div>
+
+              <div class="p-realestate-investment__consult-item js-fade">
+                <span class="p-realestate-investment__consult-icon" aria-hidden="true">♦</span>
+                <p class="p-realestate-investment__consult-text">
+                  今の不動産をこのまま持ち続けるべきか迷っている
+                </p>
+              </div>
+
+              <div class="p-realestate-investment__consult-item js-fade">
+                <span class="p-realestate-investment__consult-icon" aria-hidden="true">♦</span>
+                <p class="p-realestate-investment__consult-text">
+                  売却と活用、どちらが自分に合っているか整理したい
+                </p>
+              </div>
+
+              <div class="p-realestate-investment__consult-item js-fade">
+                <span class="p-realestate-investment__consult-icon" aria-hidden="true">♦</span>
+                <p class="p-realestate-investment__consult-text">
+                  将来を見据えて不動産を見直したい
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="c-section__flow">
+            <h3 class="c-section__block-title js-fade">資産運用の進め方</h3>
+
+            <div class="c-section__flow-list">
+              <article class="c-section__flow-item js-fade">
+                <div class="c-section__flow-step">
+                  <span class="c-section__flow-stepText">STEP</span>
+                  <span class="c-section__flow-stepNum">1</span>
+                </div>
+                <div class="c-section__flow-content">
+                  <h4 class="c-section__flow-itemTitle">現状のヒヤリング</h4>
+                  <p class="c-section__flow-text">
+                    今お持ちの不動産や資産状況、将来のお考えを伺います。
+                  </p>
+                </div>
+              </article>
+
+              <article class="c-section__flow-item js-fade">
+                <div class="c-section__flow-step">
+                  <span class="c-section__flow-stepText">STEP</span>
+                  <span class="c-section__flow-stepNum">2</span>
+                </div>
+                <div class="c-section__flow-content">
+                  <h4 class="c-section__flow-itemTitle">選択肢の整理</h4>
+                  <p class="c-section__flow-text">
+                    保有・売却・活用など、考えられる方向性を整理します。
+                  </p>
+                </div>
+              </article>
+
+              <article class="c-section__flow-item js-fade">
+                <div class="c-section__flow-step">
+                  <span class="c-section__flow-stepText">STEP</span>
+                  <span class="c-section__flow-stepNum">3</span>
+                </div>
+                <div class="c-section__flow-content">
+                  <h4 class="c-section__flow-itemTitle">方針の検討・ご提案</h4>
+                  <p class="c-section__flow-text">
+                    ご希望に沿った進め方を一緒に検討し、必要なサポートをご提案します。
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="c-section__faq">
+            <h3 class="c-section__block-title js-fade">よくある質問</h3>
+
+            <div class="c-section__faq-list js-fade">
+              <article class="c-section__faq-item">
+                <button
+                  type="button"
+                  class="c-section__faq-question"
+                  aria-expanded="false"
+                >
+                  <span class="c-section__faq-q">Q.</span>
+                  <span class="c-section__faq-questionText">
+                    投資目的でなくても相談できますか?
+                  </span>
+                  <span class="c-section__faq-icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="c-section__faq-answer">
+                  <div class="c-section__faq-answerInner">
+                    <span class="c-section__faq-a">A.</span>
+                    <p class="c-section__faq-answerText">
+                      はい、可能です。不動産をどのように考えるか整理したいというご相談も多くいただいています。
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="c-section__faq-item">
+                <button
+                  type="button"
+                  class="c-section__faq-question"
+                  aria-expanded="false"
+                >
+                  <span class="c-section__faq-q">Q.</span>
+                  <span class="c-section__faq-questionText">
+                    必ず運用や売却を進める必要がありますか？
+                  </span>
+                  <span class="c-section__faq-icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="c-section__faq-answer">
+                  <div class="c-section__faq-answerInner">
+                    <span class="c-section__faq-a">A.</span>
+                    <p class="c-section__faq-answerText">
+                      いいえ。そのようなことはありません。ご相談の結果、現状維持を選ばれる方もいらっしゃいます。
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="c-section__faq-item">
+                <button
+                  type="button"
+                  class="c-section__faq-question"
+                  aria-expanded="false"
+                >
+                  <span class="c-section__faq-q">Q.</span>
+                  <span class="c-section__faq-questionText">
+                    他社で購入した不動産でも相談できますか？
+                  </span>
+                  <span class="c-section__faq-icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="c-section__faq-answer">
+                  <div class="c-section__faq-answerInner">
+                    <span class="c-section__faq-a">A.</span>
+                    <p class="c-section__faq-answerText">
+                      一度ご相談ください。
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner l-container">
+        <nav class="site-footer__nav" aria-label="フッターナビ">
+          <ul class="site-footer__nav-list">
+            <li><a href="/">トップ</a></li>
+            <li><a href="/about/">ABOUT US</a></li>
+            <li><a href="/service/">サービス</a></li>
+            <li><a href="/recruit/">リクルート</a></li>
+            <li><a href="/company/">会社概要</a></li>
+          </ul>
+        </nav>
+        <div class="site-footer__divider" aria-hidden="true"></div>
+        <div class="site-footer__info">
+          <div class="site-footer__brand">
+            <img
+              class="site-footer__logo"
+              src="/images/logo-gold.png"
+              alt="MSP"
+              width="44"
+              height="44"
+            />
+            <div class="site-footer__brand-text">
+              <p class="site-footer__name">株式会社エムエスピー</p>
+            </div>
+          </div>
+          <div class="site-footer__addr">
+            <p>【東京本社】</p>
+            <p>〒150-0013</p>
+            <p>渋谷区恵比寿4-7 SHIBATA BLD 7階</p>
+            <p>TEL：03-6407-9365</p>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copy">© MSP Co., Ltd. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

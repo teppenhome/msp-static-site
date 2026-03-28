@@ -13,17 +13,31 @@
   }
 }
 
-//ふわっとアニメーション
+// ふわっとアニメーション（consulting / top と同系統・GSAP スクロール出現とは併用しない）
 .js-fade {
   opacity: 0;
   transform: translateY(50px) scale(0.95);
   transition:
     opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
     transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
 }
 
 .js-fade.is-inview {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-hero-reveal,
+  .js-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .js-hero-reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }

@@ -11,6 +11,7 @@ export default defineConfig({
       input: {
         main: "./index.html",
         consulting: "./consulting.html",
+        realEstate: "./real-estate.html",
       },
     },
   },
